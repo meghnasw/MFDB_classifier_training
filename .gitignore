@@ -1,0 +1,12 @@
+# QIIME2 artifacts and visualizations (don't commit)
+*.qza
+*.qzv
+
+# Outputs and scratch
+outputs/
+tmp/
+temp/
+
+# OS noise
+.DS_Store
+Thumbs.db
