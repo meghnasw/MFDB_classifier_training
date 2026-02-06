@@ -11,13 +11,13 @@ Create a plain text file named:
 
 - All_bioproject.txt
 
-Format (one BioProject ID per line). A header of `id` is allowed and will be skipped:
+Format (one BioProject ID per line). A header of `id` is needed.
 
     id
     PRJDB14548
     PRJEB30836
 
-### B) Primer pairs file (optional but recommended)
+### B) Primer pairs file is needed
 Create a plain text file named:
 
 - primers.txt
@@ -28,11 +28,10 @@ Format (tab- or space-separated; first two columns are forward and reverse). Exa
     ACTGAGAYACGGYCCA    CTGCTGGCACGDAGTTAGCC
     GTGTGCCAGCMGCCGCGGTAA    GGACTACHVGGGTWTCTAAT
 
-Multiple rows = multiple primer pairs; the script will try all provided primers.
-If primers.txt is missing, primer removal will be skipped.
+Multiple rows = multiple primer pairs; the script will try all provided primers. If no primers match the sequences, primer removal is skipped.
 
 ### C) Required software
-- QIIME2
+- QIIME2 (qiime2-amplicon-2024.10)
 - qiime fondue
 - qiime cutadapt
 - FastQC + MultiQC
@@ -299,7 +298,7 @@ Filter OTUs observed in at least 2 samples:
       --p-min-samples 2 \
       --o-filtered-table merged_otu_table_no_controls_min2.qza
 
-Remove samples with fewer than 1000 total reads:
+Remove samples with fewer than 1000 total reads (recommended):
 
     qiime feature-table filter-samples \
       --i-table merged_otu_table_no_controls_min2.qza \
