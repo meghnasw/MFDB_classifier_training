@@ -1,10 +1,20 @@
-# MFDB Classifier Training (QIIME2)
+# MFDB Classifier Training
 
-This repository documents:
+This repository provides instructions to train custom QIIME2 classifiers using the MFDB dataset.
 
-1) how users can train their own classifiers by filtering the OTU/feature table (e.g., by body site or region), then  
-2) how to use a trained classifier with the prediction workflow repository:
-   https://github.com/meghnasw/Predict-mock-samples-forensic-BFID.git
+The MFDB database is available here:
+https://mfdb.irm.uzh.ch/#/
+
+The full OTU/feature table and metadata used in the associated publication are deposited on Zenodo (see the Zenodo link below). A Random Forest classifier was trained on these Zenodo-hosted inputs. This repository explains how to:
+
+- download and use the Zenodo-hosted OTU/feature table and metadata,
+
+- filter the table (e.g., by body site or region) to define your own training subset, and
+
+- train your own classifier in QIIME2.
+
+Optionally, you can use your trained classifier with the prediction workflow repository:
+https://github.com/meghnasw/Predict-mock-samples-forensic-BFID.git
 
 ---
 
@@ -18,8 +28,6 @@ The following files are hosted on Zenodo:
 
 Zenodo record:
 - DOI / link: 10.5281/zenodo.18494561
-
-Throughout the commands below, replace paths as needed.
 
 ---
 
@@ -150,3 +158,15 @@ General approach:
 
 For full details and additional options, see QIIME2 docs:
 - sample-classifier tutorial: https://docs.qiime2.org/
+
+## Citation
+
+If you use this workflow or dataset as a reference, please cite the original classifier publication and the QIIME2 team:
+
+Swayambhu, M., Gysi, M., Haas, C., Schuh, L., Walser, L., Javanmard, F., ... & Arora, N. (2025). Standardizing a microbiome pipeline for body fluid identification from complex crime scene stains. Applied and Environmental Microbiology, 91(5), e01871-24.
+
+Bolyen, E., Rideout, J. R., Dillon, M. R., Bokulich, N. A., Abnet, C. C., Al-Ghalith, G. A., ... & Caporaso, J. G. (2019). Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nature biotechnology, 37(8), 852-857.
+
+## Author:
+Zurich Institute of Forensic Medicine, Forensic Genetics Dept.
+Contact: Dr. Natasha Arora [natasha.arora@uzh.ch] Dr. Meghna Swayambhu [meghna.swayambhu@uzh.ch]
