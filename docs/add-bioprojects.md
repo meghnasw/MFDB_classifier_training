@@ -9,7 +9,7 @@ This page describes how to add additional NCBI BioProjects (PRJNA / PRJEB / PRJD
 ### A) BioProject IDs file
 Create a plain text file named:
 
-- All_bioProj_tes.txt
+- All_bioproject.txt
 
 Format (one BioProject ID per line). A header of `id` is allowed and will be skipped:
 
@@ -44,11 +44,15 @@ The script expects (relative to each BioProject folder):
 
     ../ref_file/silva-138-ssu-nr99-seqs-derep-uniq-97.qza
 
+This SILVA 97% reference artifact is available in the prediction workflow repository under `Reference_files/`:
+
+- <https://github.com/meghnasw/Predict-mock-samples-forensic-BFID/tree/main/Reference_files>
+
 ---
 
 ## Run the BioProject processing script
 
-Save the following as: add_bioprojects.sh (in the folder containing All_bioProj_tes.txt and primers.txt), then run it.
+Save the following as: add_bioprojects.sh (in the folder containing All_bioproject.txt and primers.txt), then run it.
 
 Note: This script uses `set -uo pipefail` (no `-e`) so it continues even if one BioProject fails.
 
@@ -57,7 +61,7 @@ SCRIPT: add_bioprojects.sh
     #!/usr/bin/env bash
     set -uo pipefail   # no -e so we don't exit on first error
 
-    INPUT_FILE="All_bioProj_tes.txt"
+    INPUT_FILE="All_bioproject.txt"
     PRIMERS_FILE="primers.txt"
 
     # Arrays for multiple primers
@@ -330,4 +334,4 @@ Example re-import:
 
 ## Train the classifier
 
-Use the same qiime sample-classifier classify-samples command described in the Training page, using your new table and metadata.
+Use the same `qiime sample-classifier classify-samples` command described in the [Training page](training.md), using your new table and metadata.
