@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: MFDB Classifier Training
 description: QIIME2 classifier training using the MFDB dataset
+baseurl: "/MFDB_classifier_training"
