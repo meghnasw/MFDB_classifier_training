@@ -3,14 +3,13 @@
 This documentation explains how to train custom QIIME2 classifiers using the MFDB dataset (OTU/feature table + metadata on Zenodo) by filtering to a subset (e.g., body site/region) and re-training a classifier in QIIME2.
 
 **MFDB database:**  
-https://mfdb.irm.uzh.ch/#/
+<https://mfdb.irm.uzh.ch/#/>
 
 **Zenodo record (OTU table + metadata + trained classifier):**  
-10.5281/zenodo.18494561
+<https://doi.org/10.5281/zenodo.18494561>
 
 **Prediction workflow repository (optional):**  
-https://github.com/meghnasw/Predict-mock-samples-forensic-BFID.git
-
+<https://github.com/meghnasw/Predict-mock-samples-forensic-BFID>
 ---
 
 ## Documentation
