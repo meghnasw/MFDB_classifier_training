@@ -245,56 +245,62 @@ Create + run:
 
 ## If you add multiple BioProjects: merge tables and metadata
 
-### Merge OTU tables
+This section is intentionally generic: replace folder/file names to match your setup.
+
+### A) Merge OTU/feature tables
+
+Example: merge all per-project clustered tables found in a folder:
 
     qiime feature-table merge \
-      --i-tables otutab_fecal_datasets/*.qza \
+      --i-tables <TABLES_FOLDER>/*.qza \
       --p-overlap-method sum \
-      --o-merged-table otutab_fecal_datasets/merged_otu_table.qza
+      --o-merged-table merged_otu_table.qza
 
-### Merge metadata
+### B) Merge metadata files
+
+Example: merge two metadata files:
 
     qiime metadata merge \
-      --m-metadata1-file metadata_DDBJ_edited_merged.txt \
-      --m-metadata2-file metadata_fecal_edited_merged.txt \
-      --o-merged-metadata metadata_DDBJ_fecal_edited_merged
+      --m-metadata1-file metadata_1.tsv \
+      --m-metadata2-file metadata_2.tsv \
+      --o-merged-metadata merged_metadata
 
 Important metadata notes:
 - The first metadata column should be named id
-- Remove duplicate column names before merging
+- Remove/rename duplicate column names before merging
 
-### Example filters
+### C) Optional filtering examples
 
-Filter to healthy/control and exclude ITS:
+Filter to keep only samples matching a condition (edit to your variables):
 
     qiime feature-table filter-samples \
-      --i-table otutab_fecal_datasets/merged_otu_table.qza \
-      --m-metadata-file metadata_DDBJ_fecal_edited_merged.qza \
+      --i-table merged_otu_table.qza \
+      --m-metadata-file merged_metadata.qza \
       --p-where '(Healthy IN ("yes","control")) AND (ITS = "no")' \
-      --o-filtered-table otutab_fecal_datasets/merged_otu_table_fecal_filtered.qza
+      --o-filtered-table merged_otu_table_filtered.qza
 
 Filter out control samples:
 
     qiime feature-table filter-samples \
-      --i-table final_merged_otutab.qza \
-      --m-metadata-file metadata_final_edited_merged.tsv \
+      --i-table merged_otu_table_filtered.qza \
+      --m-metadata-file merged_metadata.tsv \
       --p-where "[Body_Site_Ed]='control'" \
       --p-exclude-ids \
-      --o-filtered-table final_merged_otutab_no_controls.qza
+      --o-filtered-table merged_otu_table_no_controls.qza
 
 Filter OTUs observed in at least 2 samples:
 
     qiime feature-table filter-features \
-      --i-table final_merged_otutab_no_controls.qza \
+      --i-table merged_otu_table_no_controls.qza \
       --p-min-samples 2 \
-      --o-filtered-table final_merged_otutab_no_controls_min2.qza
+      --o-filtered-table merged_otu_table_no_controls_min2.qza
 
 Remove samples with fewer than 1000 total reads:
 
     qiime feature-table filter-samples \
-      --i-table final_merged_otutab_no_controls_min2.qza \
+      --i-table merged_otu_table_no_controls_min2.qza \
       --p-min-frequency 1000 \
-      --o-filtered-table final_merged_otutab_no_controls_min2_min1000.qza
+      --o-filtered-table merged_otu_table_no_controls_min2_min1000.qza
 
 ---
 
@@ -303,8 +309,8 @@ Remove samples with fewer than 1000 total reads:
 Create relative-frequency (TSS) table:
 
     qiime feature-table relative-frequency \
-      --i-table final_merged_otutab_no_controls_min2_min1000.qza \
-      --o-relative-frequency-table final_merged_otutab_no_controls_tss.qza
+      --i-table merged_otu_table_no_controls_min2_min1000.qza \
+      --o-relative-frequency-table merged_otu_table_tss.qza
 
 Important: relative-frequency outputs FeatureTable[RelativeFrequency], but classifier training expects FeatureTable[Frequency].
 To convert:
