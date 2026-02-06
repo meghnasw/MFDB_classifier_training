@@ -18,4 +18,5 @@ This documentation explains how to train custom QIIME2 classifiers using the MFD
 - **Train your own classifier:** [training](training.md)  
 - **Visualize training outputs (.qzv):** [visualize](visualize.md)  
 - **Use a trained classifier to predict new samples:** [prediction](prediction.md)  
+- **Add more BioProjects:** [add-bioprojects](add-bioprojects.md)
 - **Citation + contact:** [citation](citation.md)  
