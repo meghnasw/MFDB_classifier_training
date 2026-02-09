@@ -1,4 +1,4 @@
-# MFDB Classifier Training
+# Microbiome Forensic Database (MFDB) Classifier Training
 
 This documentation explains how to train custom QIIME2 classifiers using the MFDB dataset (OTU/feature table + metadata on Zenodo) by filtering to a subset (e.g., body site/region) and re-training a classifier in QIIME2 (qiime2-amplicon-2024.10).
 
