@@ -1,4 +1,4 @@
-# Microbiome Forensic Database (MFDB) Classifier Training
+# Microbiome Forensics Database (MFDB) Classifier Training
 
 Instructions to train custom QIIME2 classifiers using the MFDB dataset.
 

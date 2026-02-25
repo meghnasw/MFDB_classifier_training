@@ -136,7 +136,7 @@ SCRIPT: add_bioprojects.sh
             echo "→ Running qiime fondue get-sequences..." &&
             qiime fondue get-sequences \
               --i-accession-ids "${BIOPROJ}.qza" \
-              --p-email meghnasw.96@gmail.com \
+              --p-email youremail@youremail@gmail.com.com \
               --o-single-reads "${BIOPROJ}_single.qza" \
               --o-paired-reads "${BIOPROJ}_paired.qza" \
               --o-failed-runs "${BIOPROJ}_failed.qza" &&
