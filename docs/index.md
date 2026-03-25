@@ -6,7 +6,7 @@ This documentation explains how to train custom QIIME2 classifiers using the MFD
 <https://mfdb.irm.uzh.ch/#/>
 
 **Zenodo record (OTU table + metadata + trained classifier):**  
-<https://doi.org/10.5281/zenodo.18494561>
+<https://zenodo.org/records/18494561>
 
 **Prediction workflow repository (optional):**  
 <https://github.com/meghnasw/Predict-mock-samples-forensic-BFID>
