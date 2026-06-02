@@ -3,7 +3,7 @@
 Instructions to train custom QIIME2 classifiers using the MFDB dataset.
 
 MFDB database:
-https://mfdb.irm.uzh.ch/#/
+[https://mfdb.irm.uzh.ch/#/](https://mfdb.irm.uzh.ch/#/)
 
 Zenodo record (OTU table + metadata + trained classifier):
 10.5281/zenodo.18494561
